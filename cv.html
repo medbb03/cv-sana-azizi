@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Sana AZIZI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+        }
+        
+        .sidebar {
+            width: 30%;
+            background: #005baa;
+            color: white;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 80%);
+            z-index: 0;
+        }
+        
+        .sidebar > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-content {
+            width: 70%;
+            padding: 20px;
+            background: white;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3b82f6;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        
+        .name {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .title {
+            color: #005baa;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #f0f7ff;
+            padding: 8px 0;
+            border-left: 4px solid #00aeef;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 15px 0 10px;
+            color: #005baa;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 40px;
+            background-color: #00aeef;
+        }
+        
+        .sidebar .section-title {
+            color: white;
+        }
+        
+        .sidebar .section-title:after {
+            background-color: #ffffff;
+        }
+        
+        .contact-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .skills {
+            margin-bottom: 15px;
+        }
+        
+        .skill-item {
+            margin-bottom: 5px;
+        }
+        
+        .skill-name {
+            margin-bottom: 2px;
+        }
+        
+        .skill-item {
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 8px;
+            padding: 4px 8px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 15px;
+            font-size: 11px;
+            border: 1px solid #3b82f6;
+        }
+        
+        .experience-item {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .job-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #1e3a8a;
+            margin-bottom: 2px;
+        }
+        
+        .company {
+            font-weight: 500;
+            margin-bottom: 2px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .date {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .job-description {
+            font-size: 11px;
+        }
+        
+        .job-description ul {
+            list-style-position: outside;
+            padding-left: 15px;
+        }
+        
+        .job-description li {
+            margin-bottom: 3px;
+        }
+        
+        .company-logo {
+            display: none;
+        }
+        
+        .language-item {
+            margin-bottom: 8px;
+        }
+        
+        .language-name {
+            margin-bottom: 2px;
+        }
+        
+        .language-item {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .language-level {
+            font-style: italic;
+            font-size: 11px;
+            color: #a3c6ff;
+        }
+        
+        .section-icon {
+            color: #3b82f6;
+            margin-right: 5px;
+        }
+        
+        .sidebar .section-icon {
+            color: white;
+        }
+        
+        .highlight {
+            color: #005baa;
+            font-weight: 600;
+        }
+        
+        @media print {
+            body {
+                background: none;
+            }
+            .container {
+                box-shadow: none;
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="./photo.jpg" alt="Sana AZIZI" class="profile-img">
+            <div style="text-align: center; margin-bottom: 15px; font-size: 11px;">
+                <i class="fas fa-flask" style="margin-right: 2px;"></i> <i class="fas fa-microscope" style="margin-right: 2px;"></i> <i class="fas fa-pills" style="margin-right: 2px;"></i> <i class="fas fa-capsules"></i>
+            </div>
+            <h1 class="name">Sana AZIZI</h1>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-address-card section-icon"></i>CONTACT</h2>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+33 6 22 92 32 80</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>sanaazizi4@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>2 rue Louviers</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/sana-azizi-4916a967</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-check-circle section-icon"></i>COMPÉTENCES</h2>
+                <div class="skills">
+                    <div class="skill-item">GMP/BPF</div>
+                    <div class="skill-item">Audits Qualité</div>
+                    <div class="skill-item">Gestion des écarts</div>
+                    <div class="skill-item">ISO 9001</div>
+                    <div class="skill-item">CAPA</div>
+                    <div class="skill-item">Assurance Qualité</div>
+                    <div class="skill-item">Amélioration continue</div>
+                    <div class="skill-item">Orientation client</div>
+                    <div class="skill-item">Gestion des risques</div>
+                    <div class="skill-item">BPF</div>
+                    <div class="skill-item">CTD</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-laptop-code section-icon"></i>INFORMATIQUE</h2>
+                <div class="skills">
+                    <div class="skill-item">MS Office</div>
+                    <div class="skill-item">Trackwise</div>
+                    <div class="skill-item">SAP</div>
+                    <div class="skill-item">Chestation</div>
+                    <div class="skill-item">Chroméleon</div>
+                    <div class="skill-item">Systèmes QMS</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-language section-icon"></i>LANGUES</h2>
+                <div class="language-item">
+                    <div class="language-name">Français</div>
+                    <div class="language-level">Langue maternelle</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Anglais</div>
+                    <div class="language-level">Professionnel</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Allemand</div>
+                    <div class="language-level">Intermédiaire</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-graduation-cap section-icon"></i>FORMATION</h2>
+                <div class="experience-item">
+                    <div class="job-title">Master Sciences du médicament</div>
+                    <div class="company">Spécialité Analyse du médicament</div>
+                    <div class="date">Faculté de pharmacie Strasbourg</div>
+                    <div class="date">Septembre 2012 - Juillet 2014</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>BPF, Module 3 : Qualité du CTD</li>
+                            <li>Normes de la qualité, droit pharmaceutique</li>
+                            <li>Affaires réglementaires, Sciences analytiques</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <h2 class="title">RESPONSABLE QUALITÉ FOURNISSEUR</h2>
+            
+            <div style="margin-bottom: 20px; padding: 0 10px; text-align: justify; font-size: 12px; line-height: 1.5;">
+                <p>Professionnelle dynamique avec <span class="highlight">10+ ans d'expérience</span> dans le domaine de l'assurance qualité pharmaceutique. Experte en gestion des audits, CAPAs et conformité réglementaire (GMP/BPF, ISO 9001), je combine rigueur analytique et orientation résultats pour garantir l'excellence opérationnelle. Ma capacité à identifier les risques qualité et à mettre en œuvre des solutions d'amélioration continue a permis de réduire significativement les non-conformités et d'optimiser les processus dans des environnements pharmaceutiques exigeants.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-briefcase section-icon"></i>EXPÉRIENCES PROFESSIONNELLES</h2>
+                
+                <div class="experience-item">
+                    <div class="job-title">Responsable Qualité Fournisseur</div>
+                    <div class="company">
+                        <span>Audi</span>
+                        <span>Mai 2022 - Présent</span>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Réalisation de <span class="highlight">15+ audits qualité fournisseurs</span> par an selon les référentiels GMP et ISO 9001</li>
+                            <li>Préparation et coordination de <span class="highlight">8 audits clients</span> avec un taux de conformité de <span class="highlight">95%</span></li>
+                            <li>Élaboration et mise en œuvre de plans d'action suite aux audits, entraînant une réduction de <span class="highlight">40%</span> des non-conformités</li>
+                            <li>Évaluation et qualification de nouveaux fournisseurs avec un taux de validation de <span class="highlight">85%</span></li>
+                            <li>Pilotage d'un projet d'amélioration continue ayant permis de réduire les délais de traitement des déviations de <span class="highlight">30%</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <img src="/api/placeholder/100/50" alt="Sanofi Pasteur" class="company-logo">
+                    <div class="job-title">Coordinatrice Assurance Qualité Opérationnelle</div>
+                    <div class="company">
+                        <span>Sanofi Pasteur</span>
+                        <span>Octobre 2016 - Avril 2022</span>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Gestion de <span class="highlight">150+ écarts qualité</span> par an avec un taux de résolution de <span class="highlight">98%</span></li>
+                            <li>Définition et suivi de <span class="highlight">75 CAPAs</span> menant à l'amélioration des processus de production</li>
+                            <li>Création et analyse des indicateurs qualité avec proposition de <span class="highlight">12 plans d'action</span> stratégiques</li>
+                            <li>Réalisation de <span class="highlight">24 visites qualité</span> annuelles en collaboration avec la production</li>
+                            <li>Participation à un projet d'optimisation des processus qui a augmenté la productivité de <span class="highlight">25%</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <img src="/api/placeholder/100/50" alt="bioMerieux" class="company-logo">
+                    <div class="job-title">Libération des Lots</div>
+                    <div class="company">
+                        <span>bioMerieux</span>
+                        <span>Juin 2016 - Septembre 2016</span>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Revue de <span class="highlight">180+ dossiers de lots</span> avec un taux d'erreur inférieur à <span class="highlight">0.5%</span></li>
+                            <li>Libération de <span class="highlight">80 lots</span> mensuels via SAP, optimisant le délai de mise sur le marché de <span class="highlight">15%</span></li>
+                            <li>Développement d'une checklist de vérification réduisant le temps de revue de <span class="highlight">20%</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <img src="/api/placeholder/100/50" alt="FAMAR" class="company-logo">
+                    <div class="job-title">Consultante Assurance Qualité Opérationnelle</div>
+                    <div class="company">
+                        <span>FAMAR</span>
+                        <span>Octobre 2015 - Juin 2016</span>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Gestion de <span class="highlight">65 écarts qualité</span> avec résolution dans un délai moyen de <span class="highlight">14 jours</span></li>
+                            <li>Définition de <span class="highlight">30 CAPAs</span> avec un taux d'efficacité de <span class="highlight">92%</span></li>
+                            <li>Communication avec <span class="highlight">12 clients majeurs</span> sur l'avancement des réclamations</li>
+                            <li>Préparation de <span class="highlight">5 audits qualité</span> avec un taux de satisfaction client de <span class="highlight">90%</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <img src="/api/placeholder/100/50" alt="Virbac" class="company-logo">
+                    <div class="job-title">Consultante Assurance Qualité</div>
+                    <div class="company">
+                        <span>Virbac</span>
+                        <span>Mars 2015 - Septembre 2015</span>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Gestion de <span class="highlight">40+ écarts qualité</span> et réduction du temps de résolution de <span class="highlight">35%</span></li>
+                            <li>Définition de <span class="highlight">8 paramètres critiques</span> de process améliorant la qualité produit de <span class="highlight">18%</span></li>
+                            <li>Traitement de <span class="highlight">25 réclamations clients</span> avec un taux de satisfaction de <span class="highlight">95%</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <img src="/api/placeholder/100/50" alt="Delpharm" class="company-logo">
+                    <div class="job-title">Chimiste Contrôle Qualité</div>
+                    <div class="company">
+                        <span>Delpharm</span>
+                        <span>Janvier 2014 - Juillet 2014</span>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Mise en place d'un système de référence interne pour <span class="highlight">250+ substances</span></li>
+                            <li>Suivi de stabilité de <span class="highlight">120 substances</span> qualifiées en interne/sous-traitance</li>
+                            <li>Gestion des déviations OOE/OOS et identification de <span class="highlight">15 actions correctives</span> majeures</li>
+                            <li>Formation de <span class="highlight">8 techniciens</span> aux nouvelles procédures de contrôle qualité</li>
+                            <li>Étude de marché des substances de référence permettant une économie de <span class="highlight">22%</span> sur les achats</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
